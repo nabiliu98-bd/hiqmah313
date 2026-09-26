@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-emerald-dark: #0A3B2C;
+    --brand-emerald: #0D4E3A;
+    --brand-forest: #06281F;
+    --brand-leaf: #16A34A;
+    --brand-leaf-light: #22C55E;
+    --brand-gold: #F59E0B;
+    --brand-gold-light: #FBBF24;
+    --brand-cream: #F4F7F4;
+    --brand-mint: #EAF3EE;
+  }
+
+  * {
+    font-family: 'Hind Siliguri', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    font-family: 'Hind Siliguri', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F8FAFC;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(13, 78, 58, 0.03) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(22, 163, 74, 0.03) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(245, 158, 11, 0.02) 0px, transparent 60%);
+    background-attachment: fixed;
+    color: #0F172A;
+    overflow-x: hidden;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent accidental pinch-zoom delays and highlight on touch */
+  button, a, input, select, textarea {
+    touch-action: manipulation;
+  }
+}
+
+/* Aesthetic Islamic Geometric Pattern Overlay */
+.islamic-subtle-pattern {
+  background-image: radial-gradient(rgba(10, 59, 44, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Brand Card Gradients & Crisp Light Styles */
+.brand-card-emerald {
+  background: linear-gradient(135deg, #0A3B2C 0%, #06281F 100%);
+  color: #FFFFFF;
+}
+
+.brand-card-light {
+  background: #FFFFFF;
+  border: 1px solid #E2EAE5;
+  box-shadow: 0 1px 3px rgba(10, 59, 44, 0.05);
+}
+
+.brand-card-mint {
+  background: #EAF3EE;
+  border: 1px solid #D1E3D8;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #EAF3EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBDAD1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #16A34A;
+}
+
+/* Print and PDF Optimization Styles */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #0f172a !important;
+    font-size: 11pt;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  header, nav, footer, .no-print, button:not(.print-allow) {
+    display: none !important;
+  }
+
+  .printable-modal-wrapper {
+    position: static !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    inset: auto !important;
+    overflow: visible !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  .printable-modal-wrapper > div {
+    position: static !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .printable-report-area {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 16px !important;
+    overflow: visible !important;
+    height: auto !important;
+    page-break-inside: auto;
+  }
+
+  table {
+    page-break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
+  .print-text-dark {
+    color: #0f172a !important;
+  }
+
+  .print-bg-gray {
+    background-color: #f8fafc !important;
+  }
+
+  .print-border {
+    border-color: #cbd5e1 !important;
+  }
+}
